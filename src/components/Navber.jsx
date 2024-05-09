@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
 
 
 const Navber = () => {
 
     const menu = <>
-        <li><a>Item 1</a></li>
-        <li><a>Item 3</a></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/allFoods'>All foods</Link></li>
+        <li><Link to='/gallery'>Gallery</Link></li>
+           
     </>
 
 
@@ -20,7 +23,7 @@ const Navber = () => {
                             {menu}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <Link to='/' className="btn btn-ghost text-xl">CulinaryCanvas</Link>
                 </div>
 
                 <div className="navbar-center hidden lg:flex">
@@ -30,10 +33,26 @@ const Navber = () => {
                 </div>
 
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <Link to='/login' className="btn">Login</Link>
+                    <Link className="btn">Log out</Link>
+
+                    <div className="dropdown dropdown-end">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                        </div>
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><Link to='/myAddedFoods'>My added food items</Link></li>
+                            <li><Link to='/addAFood'>Add a food item</Link></li>
+                            <li><Link to='/myOrdered'>My ordered food items</Link></li>
+                         
+                        </ul>
+                    </div>
+
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
