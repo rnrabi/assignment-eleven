@@ -5,20 +5,20 @@ import Swal from "sweetalert2";
 
 
 const Navber = () => {
-    const { logOutUser } = useContext(AuthContext)
+    const { user, logOutUser } = useContext(AuthContext)
 
     const handleLogOut = () => {
         logOutUser()
-        .then(()=>{
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Log out successfully",
-                showConfirmButton: false,
-                timer: 1500
-            });
-        })
-        .catch(()=>{})
+            .then(() => {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Log out successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+            .catch(() => { })
     }
 
 
@@ -53,22 +53,29 @@ const Navber = () => {
                 </div>
 
                 <div className="navbar-end">
-                    <Link to='/login' className="btn">Login</Link>
-                    <button onClick={handleLogOut} className="btn">Log out</button>
+                    {
+                        user ? <>
+                            <button onClick={handleLogOut} className="btn">Log out</button>
 
-                    <div className="dropdown dropdown-end">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <div className="dropdown dropdown-end">
+                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+                                    </div>
+                                </div>
+                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                    <li><Link to='/myAddedFoods'>My added food items</Link></li>
+                                    <li><Link to='/addAFood'>Add a food item</Link></li>
+                                    <li><Link to='/myOrdered'>My ordered food items</Link></li>
+
+                                </ul>
                             </div>
-                        </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><Link to='/myAddedFoods'>My added food items</Link></li>
-                            <li><Link to='/addAFood'>Add a food item</Link></li>
-                            <li><Link to='/myOrdered'>My ordered food items</Link></li>
+                        </> :
+                        <Link to='/login' className="btn">Login</Link>
+                    }
 
-                        </ul>
-                    </div>
+
+                    
 
                 </div>
             </div>

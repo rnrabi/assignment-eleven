@@ -4,11 +4,14 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../contextApi/ContextProvider";
 import { updateProfile } from "firebase/auth/cordova";
+import axios from "axios";
+
 
 
 
 const Register = () => {
     const { signUpUser, handleGoogleSignIn } = useContext(AuthContext)
+  
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -25,7 +28,8 @@ const Register = () => {
                     displayName: name,
                     photoURL: photo
                 }).then(() => { })
-                    .catch(() => { })
+                    .catch(() => { })           
+                    
 
                 Swal.fire({
                     position: "top-end",
@@ -38,6 +42,13 @@ const Register = () => {
             .catch(error => {
                 console.log(error.message)
             })
+
+        axios.post('http://localhost:5000/users' , {
+            name , email , photo
+        })
+        .then(res=>{
+            console.log(res.data)
+        })
 
     }
 
