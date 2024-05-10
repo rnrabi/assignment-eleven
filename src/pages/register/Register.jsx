@@ -1,23 +1,36 @@
+import { Link } from "react-router-dom";
 
 
 const Register = () => {
     return (
         <div>
-            <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
-                <h1 className="text-2xl font-bold text-center">Login</h1>
+            <div className="w-full max-w-md mx-auto shadow-lg p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
+                <h1 className="text-2xl font-bold text-center">Please Register</h1>
                 <form noValidate="" action="" className="space-y-6">
+
                     <div className="space-y-1 text-sm">
-                        <label htmlFor="username" className="block dark:text-gray-600">Username</label>
-                        <input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                        <label htmlFor="name" className="block dark:text-gray-600">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Your name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                     </div>
+
+                    <div className="space-y-1 text-sm">
+                        <label htmlFor="email" className="block dark:text-gray-600">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Your email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                    </div>
+
+                    <div className="space-y-1 text-sm">
+                        <label htmlFor="photo" className="block dark:text-gray-600">Photo</label>
+                        <input type="text" name="photo" id="photo" placeholder="Your photoURL" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                    </div>
+
                     <div className="space-y-1 text-sm">
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
                         <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
-                        <div className="flex justify-end text-xs dark:text-gray-600">
+                        {/* <div className="flex justify-end text-xs dark:text-gray-600">
                             <a rel="noopener noreferrer" href="#">Forgot Password?</a>
-                        </div>
+                        </div> */}
                     </div>
-                    <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">Sign in</button>
+                    <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">Register</button>
                 </form>
                 <div className="flex items-center pt-4 space-x-1">
                     <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
@@ -41,8 +54,8 @@ const Register = () => {
                         </svg>
                     </button>
                 </div>
-                <p className="text-xs text-center sm:px-6 dark:text-gray-600">Do not have an account?
-                    <a rel="noopener noreferrer" href="#" className="underline dark:text-gray-800">Sign up</a>
+                <p className="text-xs text-center sm:px-6 dark:text-gray-600">Have an account?
+                    <Link to='/login' className="underline dark:text-gray-800">Login</Link>
                 </p>
             </div>
         </div>
