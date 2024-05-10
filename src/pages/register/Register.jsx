@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contextApi/ContextProvider";
+
 
 
 const Register = () => {
+   
     return (
         <div>
             <div className="w-full max-w-md mx-auto shadow-lg p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
