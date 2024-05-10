@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contextApi/ContextProvider";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 
 const AddAFood = () => {
@@ -16,6 +18,21 @@ const AddAFood = () => {
         const origin = form.origin.value;
         const textarea = form.textarea.value;
         console.log(name , imageURL , category , quantity , price , addBy ,origin , textarea)
+       const addFood = {name , imageURL , category , quantity , price , addBy ,origin , textarea}
+
+        axios.post('http://localhost:5000/foods' , addFood)
+        .then(res=>{
+            console.log(res.data)
+            if(res.data.acknowledged){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your food is added",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        })
     
     }
 
