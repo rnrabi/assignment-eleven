@@ -11,7 +11,7 @@ import axios from "axios";
 
 const Register = () => {
     const { signUpUser, handleGoogleSignIn } = useContext(AuthContext)
-  
+
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -28,8 +28,8 @@ const Register = () => {
                     displayName: name,
                     photoURL: photo
                 }).then(() => { })
-                    .catch(() => { })           
-                    
+                    .catch(() => { })
+
 
                 Swal.fire({
                     position: "top-end",
@@ -43,30 +43,30 @@ const Register = () => {
                 console.log(error.message)
             })
 
-        axios.post('http://localhost:5000/users' , {
-            name , email , photo
+        axios.post('http://localhost:5000/users', {
+            name, email, photo
         })
-        .then(res=>{
-            console.log(res.data)
-        })
+            .then(res => {
+                console.log(res.data)
+            })
 
     }
 
     const googleLogIn = () => {
         handleGoogleSignIn()
-        .then(result=>{
-            console.log(result.user)
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Google log in success",
-                showConfirmButton: false,
-                timer: 1500
-            });
-        })
-        .catch(error=>{
-            console.log(error.message)
-        })
+            .then(result => {
+                console.log(result.user)
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Google log in success",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
 
     return (
