@@ -45,6 +45,13 @@ const Register = () => {
         handleGoogleSignIn()
         .then(result=>{
             console.log(result.user)
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Google log in success",
+                showConfirmButton: false,
+                timer: 1500
+            });
         })
         .catch(error=>{
             console.log(error.message)
