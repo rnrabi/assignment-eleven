@@ -5,6 +5,8 @@ import ErrorPage from "../pages/error/ErrorPage";
 import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
 import AddAFood from "../pages/addAFood/AddAFood";
+import MyAddedFood from "../pages/myAddedFood/MyAddedFood";
+
 
 export const router = createBrowserRouter([
     {
@@ -27,6 +29,10 @@ export const router = createBrowserRouter([
         {
           path:'addAFood',
           element:<AddAFood></AddAFood>
+        },
+        {
+          path:'/myAddedFoods',
+          element:<MyAddedFood></MyAddedFood>
         }
       ]
     },

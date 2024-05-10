@@ -18,7 +18,7 @@ const AddAFood = () => {
         const origin = form.origin.value;
         const textarea = form.textarea.value;
         console.log(name , imageURL , category , quantity , price , addBy ,origin , textarea)
-       const addFood = {name , imageURL , category , quantity , price , addBy ,origin , textarea}
+       const addFood = {name , email: user?.email, imageURL , category , quantity , price , addBy ,origin , textarea}
 
         axios.post('http://localhost:5000/foods' , addFood)
         .then(res=>{

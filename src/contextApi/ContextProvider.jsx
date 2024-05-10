@@ -50,6 +50,7 @@ const ContextProvider = ({ children }) => {
         signUpUser,
         user,
         loading,
+        setLoading,
         handleGoogleSignIn,
         signInUser,
         logOutUser
