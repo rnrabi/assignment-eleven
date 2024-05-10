@@ -1,14 +1,33 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../contextApi/ContextProvider";
+import Swal from "sweetalert2";
 
 
 const Navber = () => {
+    const { logOutUser } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOutUser()
+        .then(()=>{
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Log out successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        })
+        .catch(()=>{})
+    }
+
 
     const menu = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allFoods'>All foods</Link></li>
         <li><Link to='/gallery'>Gallery</Link></li>
         <li><Link to='/register'>Register</Link></li>
-           
+
     </>
 
 
@@ -35,7 +54,7 @@ const Navber = () => {
 
                 <div className="navbar-end">
                     <Link to='/login' className="btn">Login</Link>
-                    <Link className="btn">Log out</Link>
+                    <button onClick={handleLogOut} className="btn">Log out</button>
 
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -47,7 +66,7 @@ const Navber = () => {
                             <li><Link to='/myAddedFoods'>My added food items</Link></li>
                             <li><Link to='/addAFood'>Add a food item</Link></li>
                             <li><Link to='/myOrdered'>My ordered food items</Link></li>
-                         
+
                         </ul>
                     </div>
 
