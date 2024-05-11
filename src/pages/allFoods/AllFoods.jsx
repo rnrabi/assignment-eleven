@@ -22,7 +22,7 @@ const AllFoods = () => {
 
                             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{food.category}</p>
 
-                            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{food.quantity}</p>
+                            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Quantity: {food.quantity}</p>
 
                             <div className="flex justify-between mt-3 item-center">
                                 <h1 className="text-lg font-bold text-gray-700 dark:text-gray-200 md:text-xl">${food.price}</h1>
