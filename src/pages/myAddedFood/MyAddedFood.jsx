@@ -5,6 +5,7 @@ import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 
@@ -78,7 +79,8 @@ const MyAddedFood = () => {
                                 <td>${add.price}</td>
     
                                 <td>
-                                    <button className="btn btn-ghost btn-sm "><FaEdit className="text-2xl"></FaEdit></button>
+                                    <Link to={`/update/${add._id}`} className="btn btn-ghost btn-sm "><FaEdit className="text-2xl"></FaEdit></Link>
+
                                     <button onClick={()=>handleDelete(add._id)} className="btn btn-ghost btn-xs"><RiDeleteBin6Line className="text-2xl text-red-500"></RiDeleteBin6Line></button>
                                 </td>
                             </tr>)
