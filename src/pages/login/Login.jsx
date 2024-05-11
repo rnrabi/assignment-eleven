@@ -1,11 +1,13 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contextApi/ContextProvider";
 import Swal from "sweetalert2";
 
 
 const Login = () => {
     const { handleGoogleSignIn, signInUser } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -16,6 +18,7 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 console.log(result.user)
+                navigate(location?.state || '/')
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -35,6 +38,7 @@ const Login = () => {
         handleGoogleSignIn()
             .then(result => {
                 console.log(result.user)
+                navigate(location?.state || '/')
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
