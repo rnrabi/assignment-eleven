@@ -29,8 +29,9 @@ const FoodPurchase = () => {
         const quantity = form.quantity.value;
         const price = form.price.value;
         const addBy = form.addBy.value;
+        const image =purchase.imageURL;
         console.log(name, time, email, quantity, price, addBy)
-        const purchaseInfo = { name, time, email, quantity, price, addBy }
+        const purchaseInfo = { name, time, email,image, quantity, price, addBy }
 
         axios.post('http://localhost:5000/purchase', purchaseInfo)
         .then(res=>{

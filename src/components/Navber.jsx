@@ -66,7 +66,7 @@ const Navber = () => {
                                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                     <li><Link to='/myAddedFoods'>My added food items</Link></li>
                                     <li><Link to='/addAFood'>Add a food item</Link></li>
-                                    <li><Link to='/myOrdered'>My ordered food items</Link></li>
+                                    <li><Link to='/myPurchase'>My ordered food items</Link></li>
 
                                 </ul>
                             </div>

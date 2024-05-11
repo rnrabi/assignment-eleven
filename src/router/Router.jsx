@@ -11,6 +11,7 @@ import AllFoods from "../pages/allFoods/AllFoods";
 import Detail from "../pages/detail/Detail";
 import FoodPurchase from "../pages/foodPurchase/FoodPurchase";
 import PrivateRoute from "./privateRoute/PrivateRoute";
+import MyPurchase from "../pages/myPurchase/MyPurchase";
 
 
 export const router = createBrowserRouter([
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
         {
           path:'/myAddedFoods',
           element:<MyAddedFood></MyAddedFood>
+        },
+        {
+          path:'/myPurchase',
+          element:<MyPurchase></MyPurchase>
         },
         {
           path:'/update/:id',
