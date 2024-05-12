@@ -7,7 +7,8 @@ const TopFoods = () => {
     console.log(topFoods)
     return (
         <div>
-            <h2>This is top foods section</h2>
+            <h2 className="text-3xl mt-16 my-8 text-center underline">Our Top Foods</h2>
+
             <div className="md:grid grid-cols-3 gap-7">
                 {
                     topFoods.map(top => <div
@@ -32,7 +33,7 @@ const TopFoods = () => {
                     </div>)
                 }
             </div>
-
+                <Link to='/allFoods' className="flex justify-center my-8"><button className="btn btn-outline">All Foods</button></Link>
         </div>
     );
 };

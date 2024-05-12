@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 
 const useAllFoods = () => {
+    const [isLoading , setIsLoading] = useState(true)
     const [foods, setFoods] = useState([])
     const [toggle, setToggle] = useState(true)
 
@@ -14,10 +15,11 @@ const useAllFoods = () => {
         axios.get('http://localhost:5000/foods')
             .then(res => {
                 setFoods(res.data)
+                setIsLoading(false)
             })
     }, [toggle])
 
-    return { foods, refetch1 }
+    return { foods, refetch1 , isLoading }
 };
 
 export default useAllFoods;
