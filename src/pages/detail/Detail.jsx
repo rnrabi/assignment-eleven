@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const Detail = () => {
     const detailData = useLoaderData()
     console.log(detailData)
-    const { _id , imageURL, name, category, origin, price, textarea, addBy } = detailData;
+    const { _id , imageURL, name, category, origin, price, textarea, addBy , purchase} = detailData;
 
     return (
         <div>
@@ -15,6 +15,8 @@ const Detail = () => {
                         <div className="space-y-2">
                             <div className="inline-block text-2xl font-semibold sm:text-3xl">{name}</div>
                             <p className="text-xs dark:text-gray-600">Category: {category}
+                            </p>
+                            <p className="text-xs dark:text-gray-600">Purchase: {purchase} people
                             </p>
                         </div>
                         <div className="dark:text-gray-800">

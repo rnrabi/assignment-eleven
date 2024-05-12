@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contextApi/ContextProvider";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 const FoodPurchase = () => {
     const { user } = useContext(AuthContext)
     const purchase = useLoaderData()
+    const id = useParams()
     console.log(purchase)
 
     const currentTimeStamp = Date.now();
@@ -31,7 +32,7 @@ const FoodPurchase = () => {
         const addBy = form.addBy.value;
         const image =purchase.imageURL;
         console.log(name, time, email, quantity, price, addBy)
-        const purchaseInfo = { name, time, email,image, quantity, price, addBy }
+        const purchaseInfo = { id, name, time, email,image, quantity, price, addBy }
 
         axios.post('http://localhost:5000/purchase', purchaseInfo)
         .then(res=>{
