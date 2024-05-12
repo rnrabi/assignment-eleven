@@ -28,7 +28,16 @@ const Login = () => {
                 });
             })
             .catch(error => {
-                console.log(error.message)
+                console.log(error.message.split('/')[1].replace(')',''))
+                const err = error.message.split('/')[1].replace(')','')
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: err,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
             })
     }
 
@@ -63,7 +72,7 @@ const Login = () => {
 
                     <div className="space-y-1 text-sm">
                         <label htmlFor="email" className="block dark:text-gray-600">Email</label>
-                        <input type="text" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                        <input type="text" name="email" id="email" placeholder="email" required className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                     </div>
 
                     <div className="space-y-1 text-sm">

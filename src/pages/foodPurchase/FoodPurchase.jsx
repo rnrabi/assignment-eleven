@@ -55,27 +55,26 @@ const FoodPurchase = () => {
 
     return (
         <div>
-            <h2>This is food purchase</h2>
             <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
-                <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">Add Your Food</h2>
+                <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">Purchase The Food</h2>
 
                 <form onSubmit={handlePurchase}>
                     <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                         <div>
                             <label className="text-gray-700 dark:text-gray-200" htmlFor="foodname">Food name</label>
                             <input id="foodname" type="text" name="name"
-                                placeholder="Food name" defaultValue={purchase.name} className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                                placeholder="Food name" value={purchase.name} className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                         </div>
 
                         <div>
                             <label className="text-gray-700 dark:text-gray-200" htmlFor="time">Buying date</label>
 
-                            <input id="time" type="text" placeholder="Buying time" defaultValue={formattedTime} name="time" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                            <input id="time" type="text" placeholder="Buying time" value={formattedTime} name="time" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                         </div>
 
                         <div>
                             <label className="text-gray-700 dark:text-gray-200" htmlFor="quantity">Quantity </label>
-                            <input id="quantity " type="text " name="quantity" placeholder="quantity" defaultValue={purchase.quantity} className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                            <input id="quantity " type="text " name="quantity" placeholder="quantity" value={purchase.quantity} className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                         </div>
                         <div>
                             <label className="text-gray-700 dark:text-gray-200" htmlFor="addBy ">Add by  </label>
@@ -85,7 +84,7 @@ const FoodPurchase = () => {
 
                         <div>
                             <label className="text-gray-700 dark:text-gray-200" htmlFor="price ">Price  </label>
-                            <input id="price " type="text" name="price" placeholder="Price" defaultValue={purchase.price} className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                            <input id="price " type="text" name="price" placeholder="Price" value={purchase.price} className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                         </div>
 
                         <div>

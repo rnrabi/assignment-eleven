@@ -41,6 +41,14 @@ const Register = () => {
             })
             .catch(error => {
                 console.log(error.message)
+                const err = error.message.split('/')[1].replace(')','')
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: err,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             })
 
         axios.post('http://localhost:5000/users', {
@@ -77,7 +85,7 @@ const Register = () => {
 
                     <div className="space-y-1 text-sm">
                         <label htmlFor="name" className="block dark:text-gray-600">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Your name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                        <input type="text" name="name" id="name" placeholder="Your name" required className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                     </div>
 
                     <div className="space-y-1 text-sm">
@@ -87,7 +95,7 @@ const Register = () => {
 
                     <div className="space-y-1 text-sm">
                         <label htmlFor="photo" className="block dark:text-gray-600">Photo</label>
-                        <input type="text" name="photo" id="photo" placeholder="Your photoURL" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                        <input type="text" name="photo" id="photo" placeholder="Your photoURL" required className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                     </div>
 
                     <div className="space-y-1 text-sm">
