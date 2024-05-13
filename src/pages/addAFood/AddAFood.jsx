@@ -14,12 +14,14 @@ const AddAFood = () => {
         const category = form.category.value;
         const quantity = parseInt(form.quantity.value);
         const price = form.price.value;
-        const addBy = form.addBy.value;
+        const addName = form.addBy.value;
+        const email = user?.email; 
+        const addBy = {supplyer:addName , email}
         const origin = form.origin.value;
         const textarea = form.textarea.value;
         const purchase = 0;
-        console.log(name , imageURL , category , quantity , price , addBy ,origin , textarea)
-       const addFood = {name , email: user?.email, imageURL , category , quantity , price , addBy ,origin , textarea , purchase}
+        console.log(name , imageURL ,addBy , category , quantity , price , addBy ,origin , textarea)
+       const addFood = {name , imageURL , category , quantity , price , addBy ,origin , textarea , purchase}
 
         axios.post('http://localhost:5000/foods' , addFood)
         .then(res=>{
