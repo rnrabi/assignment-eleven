@@ -21,7 +21,7 @@ const Detail = () => {
                         </div>
                         <div className="dark:text-gray-800">
                             <p>${price}</p>
-                            <p>Made By: {addBy}</p>
+                            <p>Made By: {addBy.supplyer}</p>
                             <p>Origin: {origin}</p>
                             <p>Description: {textarea}</p>
                         </div>

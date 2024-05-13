@@ -1,9 +1,9 @@
 
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../contextApi/ContextProvider";
-import { updateProfile } from "firebase/auth/cordova";
+import { updateProfile } from "firebase/auth";
 import axios from "axios";
 
 
@@ -11,6 +11,8 @@ import axios from "axios";
 
 const Register = () => {
     const { signUpUser, handleGoogleSignIn ,handleGithubSignIn } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate()
 
 
     const handleRegister = (e) => {
@@ -30,7 +32,7 @@ const Register = () => {
                 }).then(() => { })
                     .catch(() => { })
 
-
+                    navigate(location?.state || '/')
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -64,6 +66,7 @@ const Register = () => {
         handleGoogleSignIn()
             .then(result => {
                 console.log(result.user)
+                navigate(location?.state || '/')
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -81,6 +84,7 @@ const Register = () => {
         handleGithubSignIn()
         .then(result=>{
             console.log(result.user)
+            navigate(location?.state || '/')
             Swal.fire({
                 position: "top-end",
                 icon: "success",

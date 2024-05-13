@@ -65,6 +65,7 @@ const Login = () => {
         handleGithubSignIn()
         .then(result=>{
             console.log(result.user)
+            navigate(location?.state || '/')
             Swal.fire({
                 position: "top-end",
                 icon: "success",
