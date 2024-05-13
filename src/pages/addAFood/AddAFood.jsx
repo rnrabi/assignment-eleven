@@ -12,7 +12,7 @@ const AddAFood = () => {
         const name = form.name.value;
         const imageURL = form.imageURL.value;
         const category = form.category.value;
-        const quantity = form.quantity.value;
+        const quantity = parseInt(form.quantity.value);
         const price = form.price.value;
         const addBy = form.addBy.value;
         const origin = form.origin.value;

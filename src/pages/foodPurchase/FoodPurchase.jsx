@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contextApi/ContextProvider";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -8,8 +8,10 @@ import Swal from "sweetalert2";
 const FoodPurchase = () => {
     const { user } = useContext(AuthContext)
     const purchase = useLoaderData()
-    const id = useParams()
+    const {id} = useParams()
+    console.log(id)
     console.log(purchase)
+    const navigate = useNavigate()
 
     const currentTimeStamp = Date.now();
     const dateObject = new Date(currentTimeStamp);
@@ -45,6 +47,7 @@ const FoodPurchase = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+                navigate(`/foodPurchase/${id}`, { replace: true });
             }
         })
     }
