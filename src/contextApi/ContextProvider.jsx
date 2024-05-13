@@ -22,6 +22,7 @@ const ContextProvider = ({ children }) => {
 
     // sign in user
     const signInUser = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 

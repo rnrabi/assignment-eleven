@@ -10,7 +10,7 @@ import axios from "axios";
 
 
 const Register = () => {
-    const { signUpUser, handleGoogleSignIn ,handleGithubSignIn } = useContext(AuthContext)
+    const { signUpUser, handleGoogleSignIn ,handleGithubSignIn ,setLoading} = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate()
 
@@ -31,7 +31,8 @@ const Register = () => {
                     photoURL: photo
                 }).then(() => { })
                     .catch(() => { })
-
+                    
+                    setLoading(false)
                     navigate(location?.state || '/')
                 Swal.fire({
                     position: "top-end",

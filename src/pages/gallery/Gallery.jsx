@@ -4,11 +4,11 @@ import { AuthContext } from "../../contextApi/ContextProvider";
 
 
 const Gallery = () => {
-    const {user} = useContext(AuthContext)
-    const { foods, refetch1 } = useAllFoods()
+    const { user } = useContext(AuthContext)
+    const { foods } = useAllFoods()
     const [hoverStates, setHoverStates] = useState(new Array(foods.length).fill(false));
     console.log(foods);
-    console.log(foods)
+
 
 
     const handleMouseEnter = (index) => {
@@ -22,6 +22,15 @@ const Gallery = () => {
         updatedHoverStates[index] = false;
         setHoverStates(updatedHoverStates);
     };
+
+    const handleFeedback = (e) => {
+        e.preventDefault()
+        const form = e.target;
+        const feedUser = user?.displayName;
+        const photo = form.photo.value;
+        const feedback = form.feedback.value;
+        console.log(feedUser, photo, feedback)
+    }
 
 
     return (
@@ -55,13 +64,13 @@ const Gallery = () => {
                             <div className="modal-box w-11/12 max-w-5xl">
                                 <h3 className="font-bold text-lg">Your feedback</h3>
 
-                
-                                <form action="" className="md:flex items-center gap-10">
+                                <form onSubmit={(e) => handleFeedback(e)} className="md:flex items-center gap-10">
                                     <p>{user?.displayName}</p>
                                     <input className="border p-2" placeholder="image url" type="text" name="photo" id="" />
                                     <textarea className="border p-2" name="feedback" placeholder="Write your feedback" id=""></textarea>
                                     <input type="submit" value="submit" />
                                 </form>
+
 
 
                                 <div className="modal-action">

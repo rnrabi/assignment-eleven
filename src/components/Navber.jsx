@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 
 const Navber = () => {
-    const { user, logOutUser } = useContext(AuthContext)
+    const { user, logOutUser , loading } = useContext(AuthContext)
 
     const handleLogOut = () => {
         logOutUser()
@@ -23,16 +23,19 @@ const Navber = () => {
 
 
     const menu = <>
-        <li><NavLink to='/' className={({isActive})=>isActive ? 'text-bold underline text-green-500' : ''}>Home</NavLink></li>
+        <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-bold underline text-green-500' : ''}>Home</NavLink></li>
 
-        <li><NavLink to='/allFoods' className={({isActive})=>isActive ? 'text-bold underline text-green-500' : ''}>All foods</NavLink></li>
-       
-        <li><NavLink to='/gallery' className={({isActive})=>isActive ? 'text-bold underline text-green-500' : ''}>Gallery</NavLink></li>
-       
-        <li><NavLink to='/register' className={({isActive})=>isActive ? 'text-bold underline text-green-500' : ''}>Register</NavLink></li>
+        <li><NavLink to='/allFoods' className={({ isActive }) => isActive ? 'text-bold underline text-green-500' : ''}>All foods</NavLink></li>
+
+        <li><NavLink to='/gallery' className={({ isActive }) => isActive ? 'text-bold underline text-green-500' : ''}>Gallery</NavLink></li>
+
+        <li><NavLink to='/register' className={({ isActive }) => isActive ? 'text-bold underline text-green-500' : ''}>Register</NavLink></li>
 
     </>
 
+    if (loading) {
+        return <span className="loading loading-spinner loading-lg"></span>
+    }
 
     return (
         <div className="">
@@ -74,11 +77,11 @@ const Navber = () => {
                                 </ul>
                             </div>
                         </> :
-                        <Link to='/login' className="btn">Login</Link>
+                            <Link to='/login' className="btn">Login</Link>
                     }
 
 
-                    
+
 
                 </div>
             </div>

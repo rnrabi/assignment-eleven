@@ -28,6 +28,7 @@ const AddAFood = () => {
         .then(res=>{
             console.log(res.data)
             if(res.data.acknowledged){
+                form.reset();
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
