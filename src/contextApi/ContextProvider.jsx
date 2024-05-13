@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider } from "firebase/auth";
 
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider()
 
 const ContextProvider = ({ children }) => {
     const auth = getAuth(app)
@@ -23,9 +25,12 @@ const ContextProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-    // sociale sign in 
+    // social sign in 
     const handleGoogleSignIn = () => {
         return signInWithPopup(auth, googleProvider);
+    }
+    const handleGithubSignIn =()=>{
+        return signInWithPopup(auth , githubProvider)
     }
 
     // logout user
@@ -52,6 +57,7 @@ const ContextProvider = ({ children }) => {
         loading,
         setLoading,
         handleGoogleSignIn,
+        handleGithubSignIn,
         signInUser,
         logOutUser
     }

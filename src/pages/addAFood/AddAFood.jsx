@@ -16,7 +16,8 @@ const AddAFood = () => {
         const price = form.price.value;
         const addName = form.addBy.value;
         const email = user?.email; 
-        const addBy = {supplyer:addName , email}
+        const image=user?.photoURL;
+        const addBy = {supplyer:addName , email , image}
         const origin = form.origin.value;
         const textarea = form.textarea.value;
         const purchase = 0;
