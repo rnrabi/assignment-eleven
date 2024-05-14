@@ -76,10 +76,20 @@ const Register = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+
+                axios.post('http://localhost:5000/users', {
+                    name : result.user.displayName, email:result.user.email, photo:result.user.photoURL
+                })
+                    .then(res => {
+                        console.log(res.data)
+                    })
+
+
             })
             .catch(error => {
                 console.log(error.message)
             })
+
     }
 
     const githubLogIn = () => {
