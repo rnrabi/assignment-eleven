@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../contextApi/ContextProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 
 const Navber = () => {
@@ -19,6 +20,8 @@ const Navber = () => {
                 });
             })
             .catch(() => { })
+            axios.post('http://localhost:5000/logout',{withCredentials:true})
+            .then(()=>{})
     }
 
 

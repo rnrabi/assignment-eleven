@@ -40,6 +40,11 @@ const AddAFood = () => {
                 }
             })
 
+        axios.post('http://localhost:5000/service', addFood)
+            .then(res => {
+                console.log(res.data)
+            })
+
     }
 
 
