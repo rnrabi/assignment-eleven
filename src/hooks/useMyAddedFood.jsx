@@ -13,7 +13,7 @@ const useMyAddedFood = () => {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/foods/${user?.email}`)
+        axios.get(`http://localhost:5000/foods/${user?.email}` , {withCredentials:true})
             .then(res => setMyAdd(res.data))
         setLoading(false)
     }, [user, toggle])

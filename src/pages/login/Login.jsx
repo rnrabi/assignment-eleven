@@ -28,6 +28,9 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+                // for jwt token
+                axios.post('http://localhost:5000/jwt' ,{email} , {withCredentials:true} )
+
             })
             .catch(error => {
                 console.log(error.message.split('/')[1].replace(')', ''))
@@ -65,6 +68,10 @@ const Login = () => {
                         console.log(res.data)
                     })
 
+                     // for jwt token
+                     axios.post('http://localhost:5000/jwt' ,{email :result.user.email} , {withCredentials:true} )
+                    
+
             })
             .catch(error => {
                 console.log(error.message)
@@ -83,6 +90,10 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+                
+                 // for jwt token
+                 axios.post('http://localhost:5000/jwt' ,{email :result.user.email} , {withCredentials:true} )
+
             })
             .catch(error => {
                 console.log(error.message)

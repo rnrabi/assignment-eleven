@@ -42,6 +42,8 @@ const Register = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+                // for jwt token
+                axios.post('http://localhost:5000/jwt', { email }, { withCredentials: true })
             })
             .catch(error => {
                 console.log(error.message)
@@ -78,12 +80,14 @@ const Register = () => {
                 });
 
                 axios.post('http://localhost:5000/users', {
-                    name : result.user.displayName, email:result.user.email, photo:result.user.photoURL
+                    name: result.user.displayName, email: result.user.email, photo: result.user.photoURL
                 })
                     .then(res => {
                         console.log(res.data)
                     })
 
+                // for jwt token
+                axios.post('http://localhost:5000/jwt', { email: result.user.email }, { withCredentials: true })
 
             })
             .catch(error => {
@@ -104,6 +108,7 @@ const Register = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+                axios.post('http://localhost:5000/jwt', { email: result.user.email }, { withCredentials: true })
             })
             .catch(error => {
                 console.log(error.message)

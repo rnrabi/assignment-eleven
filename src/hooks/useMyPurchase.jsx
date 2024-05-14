@@ -12,7 +12,7 @@ const useMyPurchase = () => {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/myPurchase/${user?.email}`)
+        axios.get(`http://localhost:5000/myPurchase/${user?.email}` , {withCredentials:true})
             .then(res => setPurchases(res.data))
     }, [user, toggle])
 

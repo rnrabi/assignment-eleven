@@ -12,7 +12,7 @@ const useAllFoods = () => {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:5000/foods')
+        axios.get('http://localhost:5000/foods',{withCredentials:true})
             .then(res => {
                 setFoods(res.data)
                 setIsLoading(false)
