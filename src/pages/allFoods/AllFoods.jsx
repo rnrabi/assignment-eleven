@@ -20,7 +20,7 @@ const AllFoods = () => {
         e.preventDefault()
         const text = e.target.search.value;
         console.log(text)
-        axios.get(`http://localhost:5000/foods?search=${text}`)
+        axios.get(`https://assignment-eleven-server-rouge.vercel.app/foods?search=${text}`)
             .then(res => {
                 console.log(res.data)
                 setAllFoods(res.data);

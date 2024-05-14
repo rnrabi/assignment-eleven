@@ -8,7 +8,7 @@ const FoodServecesTeam = () => {
     const[foodServices , setFoodServices] = useState([])
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/services')
+        axios.get('https://assignment-eleven-server-rouge.vercel.app/services')
         .then(res=>{
             setFoodServices(res.data)
         })

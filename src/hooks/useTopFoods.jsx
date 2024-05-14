@@ -11,7 +11,7 @@ const useTopFoods = () => {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:5000/topFoods')
+        axios.get('https://assignment-eleven-server-rouge.vercel.app/topFoods')
             .then(res => {
                 setTopFoods(res.data)
             })

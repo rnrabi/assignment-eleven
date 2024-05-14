@@ -12,7 +12,7 @@ const Update = () => {
     const [updateData, setUpdateData] = useState([])
     const { id } = useParams()
     useEffect(() => {
-        axios.get(`http://localhost:5000/update/${id}`)
+        axios.get(`https://assignment-eleven-server-rouge.vercel.app/update/${id}`)
             .then(res => setUpdateData(res.data))
     }, [id])
     console.log(updateData)
@@ -32,7 +32,7 @@ const Update = () => {
         console.log(name, imageURL, category, quantity, price, addBy, origin, textarea)
 
         const updateInfo = { name, imageURL, category, quantity, price, addBy, origin, textarea }
-        axios.put(`http://localhost:5000/update/${id}`, updateInfo)
+        axios.put(`https://assignment-eleven-server-rouge.vercel.app/update/${id}`, updateInfo)
             .then(res => {
                 console.log(res.data)
                 if (res.data.modifiedCount > 0) {
