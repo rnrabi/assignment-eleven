@@ -3,6 +3,7 @@ import useAllFoods from "../../hooks/useAllFoods";
 import { BsSearch } from "react-icons/bs";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 
 const AllFoods = () => {
@@ -32,6 +33,9 @@ const AllFoods = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>CulinaryCanvas | All foods</title>
+            </Helmet>
             <h2 className="text-center text-3xl font-bold my-6">All Foods</h2>
             <div className="mb-10">
                 <form onSubmit={handleSearch} className="w-full space-y-1 dark:text-gray-800">

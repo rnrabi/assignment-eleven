@@ -3,6 +3,7 @@ import { AuthContext } from "../../contextApi/ContextProvider";
 import { Navigate, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const FoodPurchase = () => {
@@ -65,6 +66,9 @@ const FoodPurchase = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>CulinaryCanvas | Purchase</title>
+            </Helmet>
             <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
                 <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">Purchase The Food</h2>
 

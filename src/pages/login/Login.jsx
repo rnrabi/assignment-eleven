@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contextApi/ContextProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
-    const { handleGoogleSignIn, signInUser , handleGithubSignIn } = useContext(AuthContext)
+    const { handleGoogleSignIn, signInUser, handleGithubSignIn } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -63,20 +64,20 @@ const Login = () => {
 
     const githubLogIn = () => {
         handleGithubSignIn()
-        .then(result=>{
-            console.log(result.user)
-            navigate(location?.state || '/')
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Github login success",
-                showConfirmButton: false,
-                timer: 1500
-            });
-        })
-        .catch(error=>{
-            console.log(error.message)
-        })
+            .then(result => {
+                console.log(result.user)
+                navigate(location?.state || '/')
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Github login success",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
 
 
@@ -84,6 +85,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>CulinaryCanvas | Login</title>
+            </Helmet>
             <div className="w-full max-w-md mx-auto shadow-lg p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
                 <h1 className="text-2xl font-bold text-center">Please Login</h1>
                 <form onSubmit={handleLogin} noValidate="" action="" className="space-y-6">

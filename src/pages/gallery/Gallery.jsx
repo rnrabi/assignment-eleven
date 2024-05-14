@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import useAllFoods from "../../hooks/useAllFoods";
 import { AuthContext } from "../../contextApi/ContextProvider";
+import { Helmet } from "react-helmet-async";
 
 
 const Gallery = () => {
@@ -35,6 +36,9 @@ const Gallery = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>CulinaryCanvas | Gallery</title>
+            </Helmet>
             <h2 className="text-center text-3xl font-bold">Our Gallery</h2>
             <section className="py-6 dark:bg-gray-100">
                 <div className="container flex flex-col justify-center p-4 mx-auto">

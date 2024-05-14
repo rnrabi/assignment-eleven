@@ -2,10 +2,11 @@ import axios from "axios";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Swal from "sweetalert2";
 import useMyPurchase from "../../hooks/useMyPurchase";
+import { Helmet } from "react-helmet-async";
 
 
 const MyPurchase = () => {
-    const {purchases , refetch2} = useMyPurchase()
+    const { purchases, refetch2 } = useMyPurchase()
     console.log(purchases)
 
     const handleDelete = (id) => {
@@ -40,6 +41,9 @@ const MyPurchase = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>CulinaryCanvas | my purchase</title>
+            </Helmet>
             <div className="overflow-x-auto">
                 <table className="table">
                     <thead>

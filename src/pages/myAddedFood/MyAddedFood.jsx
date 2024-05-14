@@ -6,14 +6,15 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 
 const MyAddedFood = () => {
     const { loading } = useContext(AuthContext)
-    const { myAdd , refetch } = useMyAddedFood()
+    const { myAdd, refetch } = useMyAddedFood()
     console.log(myAdd)
-    const handleDelete = (id)=>{
+    const handleDelete = (id) => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -22,24 +23,24 @@ const MyAddedFood = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
 
                 axios.delete(`http://localhost:5000/foods-delete/${id}`)
-                .then(res=>{
-                    console.log(res.data)
-                    if(res.data.deletedCount>0){
-                        refetch()
-                    }
-                })
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.deletedCount > 0) {
+                            refetch()
+                        }
+                    })
 
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success"
-              });
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
             }
-          });
+        });
     }
 
 
@@ -48,6 +49,9 @@ const MyAddedFood = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>CulinaryCanvas | My Added Food</title>
+            </Helmet>
             <div className="overflow-x-auto">
                 <table className="table">
                     <thead>
@@ -61,8 +65,8 @@ const MyAddedFood = () => {
                     <tbody>
 
                         {
-                            myAdd.map(add=><tr
-                            key={add._id}
+                            myAdd.map(add => <tr
+                                key={add._id}
                             >
                                 <td>
                                     <div className="flex items-center gap-3">
@@ -73,19 +77,19 @@ const MyAddedFood = () => {
                                         </div>
                                     </div>
                                 </td>
-    
+
                                 <td> {add.name}</td>
-    
+
                                 <td>${add.price}</td>
-    
+
                                 <td>
                                     <Link to={`/update/${add._id}`} className="btn btn-ghost btn-sm "><FaEdit className="text-2xl"></FaEdit></Link>
 
-                                    <button onClick={()=>handleDelete(add._id)} className="btn btn-ghost btn-xs"><RiDeleteBin6Line className="text-2xl text-red-500"></RiDeleteBin6Line></button>
+                                    <button onClick={() => handleDelete(add._id)} className="btn btn-ghost btn-xs"><RiDeleteBin6Line className="text-2xl text-red-500"></RiDeleteBin6Line></button>
                                 </td>
                             </tr>)
                         }
-                        
+
 
                     </tbody>
                 </table>

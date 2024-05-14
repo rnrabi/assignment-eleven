@@ -1,13 +1,17 @@
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 
 const Detail = () => {
     const detailData = useLoaderData()
     console.log(detailData)
-    const { _id , imageURL, name, category, origin, price, textarea, addBy , purchase} = detailData;
+    const { _id, imageURL, name, category, origin, price, textarea, addBy, purchase } = detailData;
 
     return (
         <div>
+            <Helmet>
+                <title>CulinaryCanvas | Details</title>
+            </Helmet>
             <div className="p-5 mx-auto sm:p-10 md:p-16 dark:bg-gray-100 dark:text-gray-800 shadow-2xl">
                 <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
                     <img src={imageURL} alt="" className="w-full h-60 sm:h-96 dark:bg-gray-500" />

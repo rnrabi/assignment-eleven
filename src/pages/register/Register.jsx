@@ -5,12 +5,13 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../contextApi/ContextProvider";
 import { updateProfile } from "firebase/auth";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 
 
 
 const Register = () => {
-    const { signUpUser, handleGoogleSignIn ,handleGithubSignIn ,setLoading} = useContext(AuthContext)
+    const { signUpUser, handleGoogleSignIn, handleGithubSignIn, setLoading } = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate()
 
@@ -31,9 +32,9 @@ const Register = () => {
                     photoURL: photo
                 }).then(() => { })
                     .catch(() => { })
-                    
-                    setLoading(false)
-                    navigate(location?.state || '/')
+
+                setLoading(false)
+                navigate(location?.state || '/')
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -44,7 +45,7 @@ const Register = () => {
             })
             .catch(error => {
                 console.log(error.message)
-                const err = error.message.split('/')[1].replace(')','')
+                const err = error.message.split('/')[1].replace(')', '')
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -83,24 +84,27 @@ const Register = () => {
 
     const githubLogIn = () => {
         handleGithubSignIn()
-        .then(result=>{
-            console.log(result.user)
-            navigate(location?.state || '/')
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Github login success",
-                showConfirmButton: false,
-                timer: 1500
-            });
-        })
-        .catch(error=>{
-            console.log(error.message)
-        })
+            .then(result => {
+                console.log(result.user)
+                navigate(location?.state || '/')
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Github login success",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
 
     return (
         <div>
+            <Helmet>
+                <title>CulinaryCanvas | Register</title>
+            </Helmet>
             <div className="w-full max-w-md mx-auto shadow-lg p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
                 <h1 className="text-2xl font-bold text-center">Please Register</h1>
                 <form onSubmit={handleRegister} noValidate="" action="" className="space-y-6">

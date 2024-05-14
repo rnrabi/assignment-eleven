@@ -3,21 +3,22 @@ import { AuthContext } from "../../contextApi/ContextProvider";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const Update = () => {
 
-    const {user} = useContext(AuthContext)
-    const [updateData , setUpdateData] = useState([])
-    const {id} = useParams()
-    useEffect(()=>{
+    const { user } = useContext(AuthContext)
+    const [updateData, setUpdateData] = useState([])
+    const { id } = useParams()
+    useEffect(() => {
         axios.get(`http://localhost:5000/update/${id}`)
-        .then(res=>setUpdateData(res.data))
-    },[id])
+            .then(res => setUpdateData(res.data))
+    }, [id])
     console.log(updateData)
-    const {name , category , imageURL  ,origin , price , quantity ,textarea}= updateData;
+    const { name, category, imageURL, origin, price, quantity, textarea } = updateData;
 
-    const handleUpdate =(e)=>{
+    const handleUpdate = (e) => {
         e.preventDefault()
         const form = e.target;
         const name = form.name.value;
@@ -28,27 +29,30 @@ const Update = () => {
         const addBy = form.addBy.value;
         const origin = form.origin.value;
         const textarea = form.textarea.value;
-        console.log(name , imageURL , category , quantity , price , addBy ,origin , textarea)
+        console.log(name, imageURL, category, quantity, price, addBy, origin, textarea)
 
-        const updateInfo = {name , imageURL , category , quantity , price , addBy ,origin , textarea}
-        axios.put(`http://localhost:5000/update/${id}` , updateInfo)
-        .then(res=>{
-            console.log(res.data)
-            if(res.data.modifiedCount>0){
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Updated success",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-            }
-        })
+        const updateInfo = { name, imageURL, category, quantity, price, addBy, origin, textarea }
+        axios.put(`http://localhost:5000/update/${id}`, updateInfo)
+            .then(res => {
+                console.log(res.data)
+                if (res.data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Updated success",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
     }
 
 
     return (
         <div>
+            <Helmet>
+                <title>CulinaryCanvas | Update</title>
+            </Helmet>
             <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
                 <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">Update Your Food</h2>
 
@@ -67,7 +71,7 @@ const Update = () => {
 
                         <div>
                             <label className="text-gray-700 dark:text-gray-200" htmlFor="quantity">Quantity </label>
-                            <input id="quantity " type="text " name="quantity" placeholder="quantity" defaultValue={quantity}  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                            <input id="quantity " type="text " name="quantity" placeholder="quantity" defaultValue={quantity} className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                         </div>
 
                         <div>
