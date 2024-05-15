@@ -21,7 +21,7 @@ const Navber = () => {
             })
             .catch(() => { })
             
-            axios.post('http://localhost:5000/logout',{withCredentials:true})
+            axios.post('https://assignment-eleven-server-rouge.vercel.app/logout',{withCredentials:true})
             .then(()=>{})
     }
 

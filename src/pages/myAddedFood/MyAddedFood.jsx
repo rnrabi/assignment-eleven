@@ -26,7 +26,7 @@ const MyAddedFood = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:5000/foods-delete/${id}`)
+                axios.delete(`https://assignment-eleven-server-rouge.vercel.app/foods-delete/${id}`)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.deletedCount > 0) {

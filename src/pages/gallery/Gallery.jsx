@@ -17,7 +17,7 @@ const Gallery = () => {
 
     const getFeedback = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/feedback')
+            const { data } = await axios.get('https://assignment-eleven-server-rouge.vercel.app/feedback')
             setFeedback(data)
             console.log(data)
         } catch (error) {
@@ -52,7 +52,7 @@ const Gallery = () => {
         console.log(feedUser, photo, feedback)
         const feedbacker = { feedUser, photo, feedback }
 
-        axios.post('http://localhost:5000/feedback', feedbacker, {
+        axios.post('https://assignment-eleven-server-rouge.vercel.app/feedback', feedbacker, {
             withCredentials: true
         })
             .then(res => {
