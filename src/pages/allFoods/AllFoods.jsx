@@ -4,6 +4,7 @@ import { BsSearch } from "react-icons/bs";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import GalleryBanner from "../../components/GalleryBanner";
 
 
 const AllFoods = () => {
@@ -36,7 +37,8 @@ const AllFoods = () => {
             <Helmet>
                 <title>CulinaryCanvas | All foods</title>
             </Helmet>
-            <h2 className="text-center text-3xl font-bold my-6">All Foods</h2>
+           
+            <GalleryBanner heading={'All Foods'}></GalleryBanner>
             <div className="mb-10">
                 <form onSubmit={handleSearch} className="w-full space-y-1 dark:text-gray-800">
                     <label htmlFor="Search" className="hidden">Search</label>
