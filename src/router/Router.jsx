@@ -56,12 +56,12 @@ export const router = createBrowserRouter([
         {
           path:'/detail/:id',
           element:<Detail></Detail>,
-          loader:({params})=>fetch(`https://assignment-eleven-server-rouge.vercel.app/detail/${params.id}`)
+          loader:({params})=>fetch(`http://localhost:5000/detail/${params.id}`)
         },
         {
           path:'/foodPurchase/:id',
           element:<PrivateRoute><FoodPurchase></FoodPurchase></PrivateRoute>,
-          loader:({params})=>fetch(`https://assignment-eleven-server-rouge.vercel.app/detail/${params.id}`)
+          loader:({params})=>fetch(`http://localhost:5000/detail/${params.id}`)
         },
         {
           path:'/gallery',

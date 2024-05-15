@@ -12,7 +12,7 @@ const useMyPurchase = () => {
     }
 
     useEffect(() => {
-        axios.get(`https://assignment-eleven-server-rouge.vercel.app/myPurchase/${user?.email}` , {withCredentials:true})
+        axios.get(`http://localhost:5000/myPurchase/${user?.email}` , {withCredentials:true})
             .then(res => setPurchases(res.data))
     }, [user, toggle])
 

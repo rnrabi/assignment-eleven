@@ -29,7 +29,7 @@ const Login = () => {
                     timer: 1500
                 });
                 // for jwt token
-                axios.post('https://assignment-eleven-server-rouge.vercel.app/jwt' ,{email} , {withCredentials:true} )
+                axios.post('http://localhost:5000/jwt' ,{email} , {withCredentials:true} )
 
             })
             .catch(error => {
@@ -61,7 +61,7 @@ const Login = () => {
                     timer: 1500
                 });
 
-                axios.post('https://assignment-eleven-server-rouge.vercel.app/users', {
+                axios.post('http://localhost:5000/users', {
                     name : result.user.displayName, email:result.user.email, photo:result.user.photoURL
                 })
                     .then(res => {
@@ -69,7 +69,7 @@ const Login = () => {
                     })
 
                      // for jwt token
-                     axios.post('https://assignment-eleven-server-rouge.vercel.app/jwt' ,{email :result.user.email} , {withCredentials:true} )
+                     axios.post('http://localhost:5000/jwt' ,{email :result.user.email} , {withCredentials:true} )
                     
 
             })
@@ -92,7 +92,7 @@ const Login = () => {
                 });
                 
                  // for jwt token
-                 axios.post('https://assignment-eleven-server-rouge.vercel.app/jwt' ,{email :result.user.email} , {withCredentials:true} )
+                 axios.post('http://localhost:5000/jwt' ,{email :result.user.email} , {withCredentials:true} )
 
             })
             .catch(error => {

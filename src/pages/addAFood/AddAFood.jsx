@@ -25,7 +25,7 @@ const AddAFood = () => {
         console.log(name, imageURL, addBy, category, quantity, price, addBy, origin, textarea)
         const addFood = { name, imageURL, category, quantity, price, addBy, origin, textarea, purchase }
 
-        axios.post('https://assignment-eleven-server-rouge.vercel.app/foods', addFood)
+        axios.post('http://localhost:5000/foods', addFood)
             .then(res => {
                 console.log(res.data)
                 if (res.data.acknowledged) {
@@ -40,7 +40,7 @@ const AddAFood = () => {
                 }
             })
 
-        axios.post('https://assignment-eleven-server-rouge.vercel.app/service', addFood)
+        axios.post('http://localhost:5000/service', addFood)
             .then(res => {
                 console.log(res.data)
             })

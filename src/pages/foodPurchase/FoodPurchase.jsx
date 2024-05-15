@@ -37,7 +37,7 @@ const FoodPurchase = () => {
         console.log(name, time, email, quantity, price, addBy)
         const purchaseInfo = { id, name, time, email, image, quantity, price, addBy }
 
-        axios.post('https://assignment-eleven-server-rouge.vercel.app/purchase', purchaseInfo)
+        axios.post('http://localhost:5000/purchase', purchaseInfo)
             .then(res => {
                 console.log(res.data)
                 if (res.data.acknowledged) {

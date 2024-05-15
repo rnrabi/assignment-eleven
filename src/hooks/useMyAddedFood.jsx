@@ -13,7 +13,7 @@ const useMyAddedFood = () => {
     }
 
     useEffect(() => {
-        axios.get(`https://assignment-eleven-server-rouge.vercel.app/foods/${user?.email}` , {withCredentials:true})
+        axios.get(`http://localhost:5000/foods/${user?.email}` , {withCredentials:true})
             .then(res => setMyAdd(res.data))
         setLoading(false)
     }, [user, toggle])

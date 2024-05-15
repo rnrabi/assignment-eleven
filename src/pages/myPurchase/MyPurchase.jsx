@@ -21,7 +21,7 @@ const MyPurchase = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`https://assignment-eleven-server-rouge.vercel.app/purchase/${id}`)
+                axios.delete(`http://localhost:5000/purchase/${id}`)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.deletedCount > 0) {
