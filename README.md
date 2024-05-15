@@ -1,6 +1,6 @@
 Website name : CulinaryCanvas
 
-Live site URL : 
+Live site URL : https://assignment-eleven-51b91.web.app
 
 Selected Category : assignment_category_0005
 
