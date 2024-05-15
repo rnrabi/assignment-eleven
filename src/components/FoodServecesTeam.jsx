@@ -14,7 +14,7 @@ const FoodServecesTeam = () => {
         })
     },[user])
 
-console.log(foodServices)
+// console.log(foodServices)
 
 
     return (

@@ -4,7 +4,7 @@ import useTopFoods from "../hooks/useTopFoods";
 
 const TopFoods = () => {
     const { topFoods } = useTopFoods()
-    console.log(topFoods)
+    // console.log(topFoods)
     return (
         <div>
             <h2 className="text-3xl mt-16 my-8 text-center underline">Our Top Foods</h2>

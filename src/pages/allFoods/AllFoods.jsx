@@ -8,9 +8,9 @@ import { Helmet } from "react-helmet-async";
 
 const AllFoods = () => {
     const { foods } = useAllFoods()
-    console.log(foods)
+    // console.log(foods)
     const [allFoods, setAllFoods] = useState(foods)
-    console.log(allFoods)
+    // console.log(allFoods)
 
     useEffect(() => {
         setAllFoods(foods);
@@ -19,10 +19,10 @@ const AllFoods = () => {
     const handleSearch = (e) => {
         e.preventDefault()
         const text = e.target.search.value;
-        console.log(text)
+        // console.log(text)
         axios.get(`http://localhost:5000/foods?search=${text}`)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setAllFoods(res.data);
             })
     }

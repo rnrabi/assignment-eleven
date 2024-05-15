@@ -10,8 +10,8 @@ const FoodPurchase = () => {
     const { user } = useContext(AuthContext)
     const purchase = useLoaderData()
     const { id } = useParams()
-    console.log(id)
-    console.log(purchase)
+    // console.log(id)
+    // console.log(purchase)
     const navigate = useNavigate()
 
     const currentTimeStamp = Date.now();
@@ -34,12 +34,12 @@ const FoodPurchase = () => {
         const price = form.price.value;
         const addBy = form.addBy.value;
         const image = purchase.imageURL;
-        console.log(name, time, email, quantity, price, addBy)
+        // console.log(name, time, email, quantity, price, addBy)
         const purchaseInfo = { id, name, time, email, image, quantity, price, addBy }
 
         axios.post('http://localhost:5000/purchase', purchaseInfo)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.acknowledged) {
                     Swal.fire({
                         position: "top-end",

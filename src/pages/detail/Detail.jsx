@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const Detail = () => {
     const detailData = useLoaderData()
-    console.log(detailData)
+    // console.log(detailData)
     const { _id, imageURL, name, category, origin, price, textarea, addBy, purchase } = detailData;
 
     return (

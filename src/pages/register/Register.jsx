@@ -23,7 +23,7 @@ const Register = () => {
         const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
-        console.log(name, email, photo, password)
+        // console.log(name, email, photo, password)
         signUpUser(email, password)
             .then(result => {
                 console.log(result.user)
@@ -46,7 +46,7 @@ const Register = () => {
                 axios.post('http://localhost:5000/jwt', { email }, { withCredentials: true })
             })
             .catch(error => {
-                console.log(error.message)
+                // console.log(error.message)
                 const err = error.message.split('/')[1].replace(')', '')
                 Swal.fire({
                     position: "top-end",
