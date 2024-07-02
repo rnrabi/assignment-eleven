@@ -13,9 +13,6 @@ Feature Five bullets Point:
 
 3. Culinary Canvas offers a meal planning feature that allows users to create customized meal plans based on their dietary preferences, restrictions, and culinary goals. Users can select recipes, schedule meals for the week, generate shopping lists, and even adjust portion sizes to fit their needs.
 
-4.The website fosters a vibrant and engaged community of food enthusiasts who share their culinary experiences, tips, and recipes with each other. Users can participate in forums, join cooking challenges, and interact with like-minded individuals who share their passion for food.
-
-5.  Culinary Canvas collaborates with professional chefs, food bloggers, and culinary experts to bring exclusive content to its users. Guest contributors share their expertise, insights, and favorite recipes, enriching the website's content and providing users with valuable inspiration and knowledge.
 
 <h2>Technology:</h2>
 react , javaScript , tailwind
