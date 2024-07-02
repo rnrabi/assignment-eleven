@@ -1,4 +1,5 @@
 <h2>Project Overview</h2>
+This is the food sell web site. Any one can easily buy food.
 Website name : CulinaryCanvas
 
 Live site URL : https://assignment-eleven-51b91.web.app
@@ -16,3 +17,8 @@ Feature Five bullets Point:
 4.The website fosters a vibrant and engaged community of food enthusiasts who share their culinary experiences, tips, and recipes with each other. Users can participate in forums, join cooking challenges, and interact with like-minded individuals who share their passion for food.
 
 5.  Culinary Canvas collaborates with professional chefs, food bloggers, and culinary experts to bring exclusive content to its users. Guest contributors share their expertise, insights, and favorite recipes, enriching the website's content and providing users with valuable inspiration and knowledge.
+
+<h2>Technology:</h2>
+react , javaScript , tailwind
+<h2>How to run the project by cloning from github</h2>
+Fristly You have to set secret code (key & password) of mongodb , firebase and imagebb. Then You have to go folder which have clone  from github. And then open terminal and command the code "npm run dev"
