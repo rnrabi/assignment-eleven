@@ -1,10 +1,11 @@
+<h2>Project Overview</h2>
 Website name : CulinaryCanvas
 
 Live site URL : https://assignment-eleven-51b91.web.app
 
 Selected Category : assignment_category_0005
 
-Five bullets Point: 
+Feature Five bullets Point: 
 
 1. Culinary Canvas serves as a comprehensive recipe repository, offering a vast collection of diverse and delicious recipes from various cuisines around the world. Users can easily browse through the recipes, filter by category or dietary preferences, and discover new dishes to try.
 
