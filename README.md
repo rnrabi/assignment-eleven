@@ -1,5 +1,4 @@
 <h2>Project Overview</h2>
-This is the food sell web site. Any one can easily buy food.
 Website name : CulinaryCanvas
 
 Live site URL : https://assignment-eleven-51b91.web.app
